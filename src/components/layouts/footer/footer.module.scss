@@ -1,0 +1,228 @@
+@import '../../assets/styles/variables';
+
+.footer {
+    background: $blackColor;
+    padding: $desctop50px $desctop80px $desctop50px $desctop135px;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        padding: $tablet30px;
+    }
+
+    @media only screen and (max-width: 499px) {
+        padding: $mobile60px 0 $mobile50px $mobile42px;
+    }
+
+    &__logo {
+        margin-right: 8vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            margin-right: 6vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            margin: 0 0 $mobile42px 0;
+        }
+
+        &_img {
+            width: 15vw;
+            height: 4vw;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                width: 23vw;
+                height: 6vw;
+            }
+
+            @media only screen and (max-width: 499px) {
+                width: 43vw;
+                height: 100%;
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        margin-bottom: 6vw;
+
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+        }
+
+        &>* {
+            font-family: $Nexa500;
+            font-size: $desctop14px;
+            line-height: $desctop16px;
+            color: $whiteColor;
+            width: 100%;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                font-size: $tablet14px;
+                line-height: $tablet16px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                font-family: $Nexa400;
+                font-size: $mobile14px;
+                line-height: $mobile16px;
+
+                &:not(:last-child) {
+                    margin-bottom: $mobile30px;
+                }
+            }
+        }
+
+        &__right {
+            text-align: right;
+
+            @media only screen and (max-width: 499px) {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.linksWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media only screen and (max-width: 499px) {
+        flex-wrap: wrap;
+    }
+}
+
+.list {
+    @media only screen and (max-width: 499px) {
+        margin-bottom: $mobile42px;
+        min-width: 45%;
+
+        &:last-child {
+            margin-bottom: $mobile25px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 12vw;
+
+        @media only screen and (max-width: 499px) {
+            max-width: 25vw;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        font-family: $Nexa900;
+        font-size: $desctop16px;
+        line-height: $desctop24px;
+        color: $whiteColor;
+        margin-bottom: $desctop9px;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: $tablet12px;
+            line-height: $tablet20px;
+            margin-bottom: $tablet5px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile16px;
+            line-height: $mobile24px;
+            margin-bottom: $mobile7px;
+        }
+
+        img {
+            width: $desctop23px;
+            height: $desctop23px;
+            margin-right: $desctop11px;
+
+            @media only screen and (max-width: 499px) {
+                width: $mobile16px;
+                height: $mobile16px;
+                margin-right: $mobile10px;
+            }
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-right: 1vw;
+    }
+
+    &__link {
+
+        &>* {
+            display: flex;
+            align-items: center;
+            font-family: $Nexa500;
+            font-size: $desctop14px;
+            line-height: $desctop34px;
+            color: rgba(255, 255, 255, 0.5);
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                font-size: $tablet10px;
+                line-height: $tablet20px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile13px;
+                line-height: $mobile30px;
+            }
+
+            &:hover {
+                color: $mainColor;
+                opacity: 1;
+            }
+        }
+
+        img {
+            width: $desctop25px;
+            height: $desctop25px;
+            margin-right: 1vw;
+            border-radius: $desctop6px;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                width: $tablet16px;
+                height: $tablet16px;
+                margin-right: 1.5vw;
+                border-radius: $tablet5px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                width: $mobile16px;
+                height: $mobile16px;
+                margin-right: $mobile12px;
+                border-radius: $mobile5px;
+            }
+        }
+    }
+
+    &__text {
+        font-family: $Nexa500;
+        font-size: $desctop14px;
+        line-height: $desctop34px;
+        color: rgba(255, 255, 255, 0.5);
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: $tablet10px;
+            line-height: $tablet20px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            line-height: $mobile30px;
+        }
+    }
+}

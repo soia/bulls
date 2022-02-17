@@ -1,0 +1,132 @@
+@import '../../../assets/styles//variables.scss';
+@import '../../../assets/styles/mixin';
+
+.container {
+    padding: $desctop60px 9.4vw $desctop40px;
+    position: relative;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        width: 90vw;
+        padding: 0 0 $tablet10px 0;
+        margin: 0 auto;
+    }
+
+    @media only screen and (max-width: 499px) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    &__title {
+        font-family: $Nexa700;
+        color: $whiteColor;
+        font-size: $desctop36px;
+        text-align: center;
+        margin: 0 0 6vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-family: $Nexa700;
+            font-size: $tablet30px;
+            padding: $tablet40px 0 $tablet60px;
+            margin: 0 auto;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile24px;
+            padding: $mobile44px 0;
+            margin: 0 auto 1vw;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 499px) {
+            width: 90vw;
+        }
+    }
+
+    &__item {
+        width: 45%;
+        height: 36vw;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 0.7vw rgba(0, 0, 0, 0.15);
+        border-radius: 0.7vw;
+        transition: all 0.4s;
+        background-color: $whiteColor;
+        padding: $desctop20px $desctop40px $desctop30px;
+        margin-bottom: $desctop60px;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            width: 48%;
+            height: 50vw;
+            padding: $tablet20px;
+            margin-bottom: $tablet50px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            height: initial;
+            margin: 0 0 $mobile44px;
+            box-shadow: 0 0 $mobile10px rgba(0, 0, 0, 0.15);
+            border-radius: $mobile10px;
+            padding: $mobile20px $mobile10px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &_text {
+            font-family: $Nexa500;
+            font-size: $desctop26px;
+            color: $blackColor;
+            line-height: $desctop40px;
+            text-align: center;
+            margin: 0 auto $desctop25px;
+            height: 5vw;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                font-size: $tablet20px;
+                line-height: $tablet26px;
+                margin: 0 auto $desctop25px;
+                height: 9vw;
+            }
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile20px;
+                line-height: $mobile30px;
+                max-width: 100%;
+                margin: 0 auto $mobile25px;
+                height: initial;
+            }
+        }
+
+        &_img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: $desctop10px;
+
+            @media only screen and (max-width: 499px) {
+                height: 80vw;
+                border-radius: $mobile10px;
+            }
+        }
+    }
+}

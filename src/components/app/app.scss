@@ -1,0 +1,925 @@
+@import '../assets/styles/variables';
+@import '../assets/styles/reset.scss';
+@import '~antd/dist/antd.css';
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    font-family: $Nexa500;
+    min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// remove arrows for input type number
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input {
+    -webkit-appearance: none;
+}
+
+// custom scrollbar
+
+::-webkit-scrollbar {
+    width: 0.2vw;
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #19192d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $blackColor;
+    border-radius: 2.5vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $blackColor;
+}
+
+// custom scrollbar
+
+// hide transparent on focus
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+// hide transparent on focus
+
+.ant-message span {
+    font-family: $Nexa500;
+    color: $blackColor;
+    font-size: $desctop14px;
+    z-index: 9999999;
+
+    @media only screen and (max-width: 499px) {
+        font-size: 3.5vw;
+    }
+}
+
+// remove input number arrows firefox
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+// remove input number arrows firefox
+
+// react-notification
+
+.react-notification-root {
+    top: 0;
+}
+
+.notification-item {
+    border-left: none !important;
+}
+
+#root .notification-item .notification-message,
+.notification-item .notification-title {
+    font-size: 1vw;
+
+    @media only screen and (max-width: 499px) {
+        font-size: 5vw !important;
+    }
+}
+
+#root .react-notification-root {
+    z-index: 999999999;
+
+    .notification-content {
+        min-height: 4.24vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .notification-default {
+        border-left: 8px solid #2a1f84;
+    }
+
+    .notification-success {
+        border-left: 8px solid #96df6a;
+    }
+}
+
+.notification-message,
+.notification-title {
+    font-family: $Nexa500;
+}
+
+// react-notification
+
+select {
+    @media only screen and (max-width: 499px) {
+        font-size: 50px;
+    }
+}
+
+// change autofill background totransparent
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: $whiteColor !important;
+}
+
+#profile input:-webkit-autofill,
+#profile input:-webkit-autofill:hover,
+#profile input:-webkit-autofill:focus,
+#profile input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: $blackColor !important;
+}
+
+// change autofill background totransparent
+
+/* FF, IE7+, chrome (except button) */
+
+input[type='file'],
+input[type='file']::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+// ant checkbox
+
+.ant-checkbox {
+
+    input[type='radio'],
+    input[type='checkbox'] {
+        width: $desctop16px;
+        height: $desctop16px;
+
+        @media only screen and (max-width: 499px) {
+            width: $mobile16px;
+            height: $mobile16px;
+        }
+    }
+
+    .ant-checkbox-inner {
+        width: $desctop16px;
+        height: $desctop16px;
+        border: $desctop1px solid $whiteColor;
+        border-radius: 50%;
+        background-color: transparent;
+
+        @media only screen and (max-width: 499px) {
+            width: $mobile16px;
+            height: $mobile16px;
+            border: $mobile1px solid $whiteColor;
+        }
+    }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: $blackColor;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus+.ant-checkbox-inner {
+    border: $desctop1px solid $blackColor;
+
+    @media only screen and (max-width: 499px) {
+        border: $mobile1px solid $blackColor;
+    }
+}
+
+.ant-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.ant-checkbox-checked::after {
+    border: none;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner::after {
+    border: 0.13vw solid #fff;
+    border-top: 0;
+    border-left: 0;
+    top: 44%;
+    left: 24%;
+    width: 0.3vw;
+    height: 0.65vw;
+
+    @media only screen and (max-width: 499px) {
+        border: $mobile2px solid #fff;
+        border-top: 0;
+        border-left: 0;
+        width: $mobile6px;
+        height: 3vw;
+        top: 43%;
+        left: 22%;
+    }
+}
+
+.ant-checkbox+span {
+    padding: 0 0 0 $desctop10px;
+    top: -0.09em;
+    position: relative;
+
+    @media only screen and (max-width: 499px) {
+        padding: 0 0 0 $mobile10px;
+    }
+}
+
+// ant checkbox
+
+// ant drawer
+
+.drawer {
+    &__vectorIcon {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        width: 77.78vw;
+        height: 111.112vw;
+    }
+
+    &__closeIcon {
+        width: $mobile20px;
+        height: $mobile20px;
+        padding: $mobile17px;
+        box-sizing: content-box;
+    }
+
+    #aside {
+        @media only screen and (max-width: 499px) {
+            display: block;
+            width: 100%;
+            padding: $mobile10px 0 0 $mobile17px;
+            position: relative;
+            z-index: 2;
+            background: transparent;
+        }
+    }
+
+    .ant-drawer-body {
+        padding: 0 $mobile17px $mobile17px 0;
+        height: 100vh;
+        overflow: auto;
+        background: $blackColor;
+    }
+}
+
+// ant drawer
+
+// react-notification
+
+.react-notification-root {
+    top: 0;
+}
+
+.notification-item {
+    border-left: none !important;
+}
+
+#root .react-notification-root {
+    z-index: 999999999;
+
+    .notification-content {
+        min-height: 4.24vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .notification-default {
+        border-left: 8px solid #2a1f84;
+    }
+
+    .notification-success {
+        border-left: 8px solid #29ad4e;
+    }
+}
+
+.notification-message,
+.notification-title {
+    font-family: $Nexa500;
+}
+
+// react-notification
+
+// wallet-countdown
+
+#root .wallet-countdown {
+    position: absolute;
+    top: -4.1vw;
+    right: 0;
+    border: $desctop2px solid $blackColor;
+    border-radius: 1.8vw;
+    padding: $desctop26px $desctop26px;
+    width: 21.39vw;
+
+    @media only screen and (max-width: 499px) {
+        position: static;
+        width: 100%;
+        margin-bottom: 30px;
+        border: $mobile2px solid $blackColor;
+        border-radius: $mobile25px;
+        padding: $mobile20px 7vw;
+    }
+
+    &__title {
+        font-family: $Nexa500;
+        font-size: $desctop18px;
+        line-height: 140%;
+        letter-spacing: 0.225em;
+        color: $blackColor;
+        text-transform: uppercase;
+        margin: 0 0 1.7vw 0;
+        text-align: center;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            margin-bottom: $mobile10px;
+            line-height: 150%;
+        }
+    }
+
+    span {
+        font-family: $Nexa500;
+        font-size: $desctop36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $blackColor;
+        letter-spacing: 0.5vw;
+        transform: translateX(0.3vw);
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile24px;
+        }
+    }
+}
+
+// wallet-countdown
+
+// tooltip
+.ant-tooltip {
+    max-width: initial;
+}
+
+.ant-tooltip-inner {
+    background-color: #313162;
+    font-family: 'Nexa500', Arial, Helvetica, sans-serif;
+}
+
+.ant-tooltip-placement-top .ant-tooltip-arrow,
+.ant-tooltip-placement-topLeft .ant-tooltip-arrow,
+.ant-tooltip-placement-topRight .ant-tooltip-arrow {
+    border-top-color: #313162;
+}
+
+.ant-tooltip-arrow::before {
+    background-color: #313162;
+}
+
+// tooltip
+
+header #selectLangeage div:hover {
+    color: #fff;
+}
+
+#header #selectLangeage img {
+    @media only screen and (max-width: 499px) {
+        margin-right: 4vw;
+    }
+}
+
+#login #footer {
+    @media only screen and (max-width: 499px) {
+        display: none;
+    }
+}
+
+// ant.design tab
+.ant-tabs-tab {
+    font-family: $Nexa500;
+    font-size: $desctop13px;
+    line-height: $desctop19px;
+    color: $blackColor;
+
+    @media only screen and (max-width: 499px) {
+        font-size: $mobile13px;
+        line-height: $mobile19px;
+    }
+}
+
+.ant-tabs-nav .ant-tabs-tab-active,
+.ant-tabs-nav .ant-tabs-tab:hover {
+    color: $blackColor;
+}
+
+.ant-tabs-ink-bar {
+    height: $desctop2px;
+    background-color: $blackColor;
+
+    @media only screen and (max-width: 499px) {
+        height: $mobile2px;
+    }
+}
+
+.ant-tabs-bar {
+    border-bottom: $desctop1px solid $blackColor;
+
+    @media only screen and (max-width: 499px) {
+        border-bottom: $mobile1px solid $blackColor;
+    }
+}
+
+// ant.design tab
+
+.linenumber {
+    min-width: 3em !important;
+}
+
+// ant-radio
+
+span.ant-radio+* {
+    font-family: $Nexa500;
+    font-size: $desctop13px;
+    line-height: $desctop19px;
+    color: $blackColor;
+    padding: 0 $desctop8px;
+
+    @media only screen and (max-width: 499px) {
+        font-size: $mobile13px;
+        line-height: $mobile19px;
+        padding: 0 $mobile7px;
+    }
+}
+
+.ant-radio-inner {
+    width: $desctop16px;
+    height: $desctop16px;
+    border-width: $desctop1px;
+
+    @media only screen and (max-width: 499px) {
+        width: $mobile16px;
+        height: $mobile16px;
+        border-width: $mobile1px;
+    }
+}
+
+.ant-radio-checked .ant-radio-inner {
+    border-color: $blackColor;
+}
+
+.ant-radio-checked::after,
+.ant-radio-wrapper:hover .ant-radio,
+.ant-radio:hover .ant-radio-inner,
+.ant-radio-input:focus+.ant-radio-inner {
+    border-color: $blackColor;
+}
+
+.ant-radio-checked::after {
+    border: $desctop1px solid $blackColor;
+
+    @media only screen and (max-width: 499px) {
+        border: $mobile1px solid $blackColor;
+    }
+}
+
+.ant-radio-inner::after {
+    background-color: $blackColor;
+    top: $desctop3px;
+    left: $desctop3px;
+    width: $desctop8px;
+    height: $desctop8px;
+    border-radius: $desctop8px;
+
+    @media only screen and (max-width: 499px) {
+        top: 0.9vw;
+        left: 0.9vw;
+        width: 2vw;
+        height: 2vw;
+        border-radius: 2.134vw;
+    }
+}
+
+.ant-radio-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: $desctop15px;
+
+    @media only screen and (max-width: 499px) {
+        margin-bottom: $mobile15px;
+    }
+}
+
+// ant-radio
+
+// burger-button
+.burgerMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $mobile34px;
+    height: $mobile24px;
+
+    button {
+        padding: $mobile20px $mobile30px;
+        margin: 0;
+
+        &>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $mobile34px;
+            height: $mobile24px;
+
+            &>span {
+                top: initial;
+                margin-top: 0;
+                width: $mobile34px;
+                height: $mobile4px;
+
+                &::before,
+                &::after {
+                    width: $mobile34px;
+                    height: $mobile4px;
+                    border-radius: $mobile4px;
+                }
+
+                &::before {
+                    top: -2.67vw;
+                }
+
+                &::after {
+                    bottom: -2.67vw;
+                }
+            }
+        }
+    }
+}
+
+// burger-button
+
+// modal QR code
+
+.modalQRCode {
+    canvas {
+        width: 19vw !important;
+        height: 18vw !important;
+
+        @media only screen and (max-width: 499px) {
+            width: $mobile270px !important;
+            height: $mobile270px !important;
+        }
+    }
+
+    &__address {
+        font-family: $Nexa400;
+        font-size: $desctop12px;
+        color: $blackColor;
+        border-bottom: $desctop1px solid $blackColor;
+        padding-bottom: $desctop6px;
+        margin-bottom: $desctop6px;
+        cursor: pointer;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            border-bottom: $mobile1px solid $blackColor;
+            padding-bottom: $mobile6px;
+            margin-bottom: $mobile6px;
+        }
+    }
+}
+
+// modal QR code
+
+// pretty-print
+
+.json-key {
+    color: $blackColor;
+}
+
+.json-value {
+    color: $blackColor;
+}
+
+.json-string {
+    color: $blackColor;
+}
+
+// pretty-print
+
+#addressPage,
+#block-page {
+    .ant-tabs.ant-tabs-top.ant-tabs-line {
+        overflow: visible;
+    }
+}
+
+.noFromToData {
+    font-family: $Nexa500;
+    font-size: $desctop12px;
+    line-height: $desctop19px;
+    color: $blackColor;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+// Animation
+
+.hooks-main>svg {
+    display: none;
+}
+
+.hooks-main>div {
+    position: absolute;
+    will-change: transform;
+    border-radius: 50%;
+    background: $blackColor;
+    box-shadow: $desctop10px $desctop10px $desctop5px 0 rgba(0, 0, 0, 0.75);
+}
+
+.hooks-main>div:nth-child(1) {
+    width: $desctop120px;
+    height: $desctop120px;
+}
+
+.hooks-main>div:nth-child(2) {
+    width: $desctop225px;
+    height: $desctop225px;
+}
+
+.hooks-main>div:nth-child(3) {
+    width: $desctop150px;
+    height: $desctop150px;
+}
+
+.hooks-main>div::after {
+    content: '';
+    position: absolute;
+    top: $desctop20px;
+    left: $desctop20px;
+    width: $desctop40px;
+    height: $desctop40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.hooks-main>div:nth-child(2)::after {
+    top: $desctop70px;
+    left: $desctop70px;
+    width: $desctop70px;
+    height: $desctop70px;
+}
+
+.hooks-main>div:nth-child(3)::after {
+    top: $desctop50px;
+    left: $desctop50px;
+    width: $desctop50px;
+    height: $desctop50px;
+}
+
+.hooks-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    filter: url('#goo');
+    overflow: hidden;
+}
+
+// Animation
+
+
+#tsparticles {
+    position: absolute;
+    height: inherit;
+    width: 100vw;
+    background: $blackColor;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+#gallery {
+    .slick-slider.slick-initialized {
+        width: 90%;
+        margin: 0 auto;
+        z-index: 10;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            width: 80%;
+        }
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+        }
+    }
+
+    .slick-list {
+        margin: 0 -1.4vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            margin: 0 -2.61vw;
+        }
+    }
+
+    .slick-slide>div {
+        padding: 0 1.4vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            padding: 0 2.61vw;
+        }
+    }
+
+    img {
+        border-radius: 1vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            border-radius: 5vw;
+        }
+    }
+
+    .slick-next {
+        right: -2.778vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            right: -5.21vw;
+        }
+    }
+
+    .slick-prev {
+        left: -4vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            left: -7.21vw;
+        }
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 2.778vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: 4.5vw;
+        }
+    }
+
+    @media only screen and (max-width: 499px) {
+        .slick-dots li {
+            width: $mobile20px;
+            height: $mobile20px;
+            margin: 0 $mobile5px;
+        }
+    }
+
+    .slick-dots li button:before {
+        top: $desctop24px;
+        color: $whiteColor;
+        opacity: 0.5;
+        font-size: $desctop10px;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            top: 3vw;
+            color: $whiteColor;
+            opacity: 0.5;
+            font-size: $tablet10px;
+        }
+    }
+
+    .slick-dots li.slick-active button:before {
+        opacity: 1 !important;
+    }
+
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: $mainColor;
+    }
+
+    .slick-slide {
+        padding: 0 $desctop10px;
+
+        @media only screen and (max-width: 499px) {
+            padding: 0 $mobile10px;
+        }
+    }
+
+    .style_slick__rdSVE {
+        margin-bottom: auto;
+    }
+}
+
+// Coverflow
+
+.coverflow__figure__3bk_C {
+    opacity: 1 !important;
+}
+
+// Coverflow
+
+
+// Particles
+
+.particles {
+
+    @media only screen and (max-width: 499px) {
+        display: none;
+    }
+}
+
+#specialization {
+    position: relative;
+
+    @media only screen and (max-width: 499px) {
+        top: -0.28vw;
+    }
+
+    #tsparticles {
+        top: 0%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+// Particles
+
+.educationWrapper {
+    background-color: #130f40;
+    background-image: linear-gradient(315deg, #4FA8CF 0%, #000000 74%);
+}
+
+
+// Back to top
+
+.ant-back-top {
+    font-size: $desctop14px;
+    right: $desctop30px;
+    bottom: $desctop66px;
+    width: $desctop40px;
+    height: $desctop40px;
+    z-index: 9999;
+
+    @media only screen and (max-width: 499px) {
+        font-size: $mobile14px;
+        right: $mobile20px;
+        bottom: $mobile20px;
+        width: $mobile42px;
+        height: $mobile42px;
+    }
+}
+
+.ant-back-top-content {
+    width: $desctop40px;
+    height: $desctop40px;
+    background: $mainColor;
+    border-radius: $desctop20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 499px) {
+        width: $mobile42px;
+        height: $mobile42px;
+        border-radius: $mobile20px;
+    }
+}
+
+.ant-back-top-icon {
+    width: $desctop14px;
+    height: $desctop16px;
+    margin: $desctop3px 0 0 0;
+
+    @media only screen and (max-width: 499px) {
+        width: $mobile14px;
+        height: $mobile16px;
+        margin: $mobile1px 0 0 0;
+    }
+}
+// Back to top

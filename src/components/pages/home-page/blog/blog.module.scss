@@ -1,0 +1,237 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
+
+.blog {
+    padding: $desctop60px $desctop20px;
+    position: relative;
+    min-height: 100vh;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        padding: $tablet10px 0 $tablet80px 0;
+    }
+
+    @media only screen and (max-width: 499px) {
+        min-height: initial;
+        padding: $mobile44px 0 $mobile50px 0;
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    &__title {
+        position: relative;
+        z-index: 10;
+        font-family: $Nexa700;
+        color: $blackColor;
+        font-size: $desctop36px;
+        margin-bottom: $desctop15px;
+        text-align: center;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: $tablet26px;
+            padding: $tablet40px 0 $tablet60px;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile24px;
+            margin-bottom: $mobile42px;
+            white-space: nowrap;
+        }
+    }
+
+    &__loadMore {
+        font-family: $Nexa700;
+        margin: 0 auto;
+        display: flex;
+        border: $desctop2px solid $blackColor;
+        background-color: $blackColor;
+        color: $whiteColor;
+        padding: $desctop15px $desctop45px;
+        border-radius: $desctop20px;
+        outline: none;
+        cursor: pointer;
+        margin-top: $desctop20px;
+        transition: all 0.25s;
+        width: fit-content;
+        font-size: $desctop16px;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            border: $tablet2px solid $blackColor;
+            padding: $tablet16px $tablet40px;
+            border-radius: $tablet20px;
+            margin-top: $tablet20px;
+            font-size: $tablet16px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            border: $mobile2px solid $blackColor;
+            padding: $mobile16px $mobile42px;
+            border-radius: $mobile20px;
+            margin-top: 0;
+            font-size: $mobile16px;
+        }
+
+        a {
+            color: $whiteColor;
+
+            &:hover {
+                color: $blackColor;
+            }
+        }
+
+        &:hover {
+            background-color: $whiteColor;
+            color: $blackColor;
+        }
+    }
+}
+
+.insta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4vw 8vw 0;
+    position: relative;
+    z-index: 999;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        padding: 0;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    @media only screen and (max-width: 499px) {
+        padding: 0;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 24vw;
+        box-shadow: 0 0 $desctop10px rgba(0,0,0,0.15);
+        border-radius: $desctop10px;
+        margin-bottom: $desctop50px;
+        transition: all 0.4s;
+        -webkit-backface-visibility: hidden;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            width: 43vw;
+            box-shadow: 0 0 $tablet10px rgba(0,0,0,0.15);
+            border-radius: $tablet10px;
+            margin-bottom: $tablet50px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            box-shadow: 0 0 $mobile10px rgba(0,0,0,0.15);
+            border-radius: $mobile10px;
+            margin-bottom: $mobile44px;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+
+            @media only screen and (max-width: 499px) {
+                transform: initial;
+            }
+        }
+
+        &_img, video {
+            width: 100%;
+            height: 21vw;
+            object-fit: cover;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                height: 40vw;
+            }
+
+            @media only screen and (max-width: 499px) {
+                height: initial;
+            }
+        }
+
+        &_time {
+            padding: $desctop10px;
+            font-family: $Nexa500;
+            font-size: $desctop13px;
+            color: $blackColor;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                padding: $tablet10px;
+                font-size: $tablet14px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                padding: $mobile10px;
+                font-size: $mobile14px;
+            }
+        }
+
+        &_caption {
+            padding:  0 $desctop10px $desctop20px $desctop10px;
+            font-family: $Nexa700;
+            font-size: $desctop14px;
+            line-height: $desctop20px;
+            color: $blackColor;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                padding:  0 $tablet10px $tablet20px $tablet10px;
+                font-size: $tablet16px;
+                line-height: $tablet20px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                padding:  0 $mobile10px $mobile20px $mobile10px;
+                font-size: $mobile16px;
+                line-height: $mobile20px;
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        padding: $desctop10px;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            padding: $tablet10px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            padding: $mobile10px;
+        }
+
+        &_pic {
+            width: $desctop40px;
+            height: $desctop40px;
+            border-radius: 50%;
+            margin-right: $desctop15px;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                width: $tablet40px;
+                height: $tablet40px;
+                margin-right: $tablet16px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                width: $mobile42px;
+                height: $mobile42px;
+                margin-right: $mobile16px;
+            }
+        }
+
+        &_username {
+            font-family: $Nexa700;
+            font-size: $desctop16px;
+            color: $blackColor;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                font-size: $tablet16px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile16px;
+            }
+        }
+    }
+}

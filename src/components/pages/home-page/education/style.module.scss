@@ -1,0 +1,118 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    cursor: url('./cursor.png') 39 39, auto;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        height: 75vh;
+    }
+
+    @media only screen and (max-width: 499px) {
+        height: 135vw;
+    }
+
+    &>span {
+        position: absolute;
+        bottom: 8vh;
+        will-change: transform;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            bottom: 7vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 499px) {
+            top: 30%;
+            bottom: initial;
+        }
+
+        &>span {
+            background-color: transparent;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 70vh;
+            height: 70vh;
+            will-change: transform;
+            border-radius: $desctop10px;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                width: 50vh;
+                height: 50vh;
+                border-radius: $tablet10px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                width: 85vw;
+                height: 85vw;
+                border-radius: $mobile10px;
+            }
+        }
+    }
+}
+
+.wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $desctop60px;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        margin-top: $tablet60px;
+    }
+
+    @media only screen and (max-width: 499px) {
+        width: fit-content;
+        text-align: center;
+        margin-top: $mobile44px;
+    }
+
+    &__title {
+        font-family: $Nexa700;
+        color: $whiteColor;
+        font-size: $desctop36px;
+        margin-bottom: $desctop15px;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: $tablet30px;
+            margin-bottom: $tablet14px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile24px;
+            margin-bottom: $mobile14px;
+            white-space: nowrap;
+        }
+    }
+
+    &__subTitle {
+        font-family: $Nexa500;
+        color: $whiteColor;
+        font-size: $desctop24px;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: $tablet20px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile16px;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import '../assets/styles/variables';
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    @media only screen and (max-width: 499px) {
+        position: absolute;
+        left: $mobile20px;
+        bottom: $mobile42px;
+        flex-direction: row;
+    }
+
+    &:hover {
+        .container__lang {
+            color: $mainColor;
+        }
+    }
+
+    &__flagIcon {
+        width: $desctop22px;
+        height: $desctop22px;
+        border: $desctop1px solid rgba(241, 241, 241, 0.4);
+        border-radius: 50%;
+        box-sizing: content-box;
+
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            width: $tablet20px;
+            height: $tablet20px;
+            border: $tablet1px solid rgba(241, 241, 241, 0.4);
+        }
+
+        @media only screen and (max-width: 499px) {
+            width: $mobile21px;
+            height: $mobile21px;
+        }
+    }
+
+    &__lang {
+        font-family: $Nexa900;
+        text-transform: uppercase;
+        bottom: -1.5vw;
+        user-select: none;
+        transition: all 0.2s;
+        display: none;
+
+        @media only screen and (max-width: 499px) {
+            display: block;
+            font-size: $mobile10px;
+            letter-spacing: $mobile1px;
+            margin-left: $mobile1px;
+            color: $blackColor;
+            padding-left: $mobile20px;
+        }
+    }
+}

@@ -1,0 +1,292 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
+
+.boxes {
+    padding: $desctop100px $desctop20px $desctop124px;
+    position: relative;
+    height: 100vh;
+    min-height: 55vw;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        padding: $tablet80px $tablet20px;
+        height: initial;
+        min-height: initial;
+        width: 90vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    @media only screen and (max-width: 499px) {
+        padding: $mobile44px 0;
+        height: initial;
+        min-height: initial;
+        width: 90vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__title {
+        font-family: $Nexa700;
+        color: $blackColor;
+        font-size: $desctop36px;
+        margin-bottom: $desctop15px;
+        text-align: center;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: $tablet30px;
+            margin-bottom: $tablet14px;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile24px;
+            margin-bottom: $mobile20px;
+        }
+    }
+
+    &__subTitle {
+        font-family: $Nexa500;
+        color: $blackColor;
+        font-size: $desctop24px;
+        margin-bottom: $desctop15px;
+        text-align: center;
+        max-width: 70%;
+        margin: 0 auto;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: $tablet20px;
+            max-width: 90%;
+        }
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile16px;
+            max-width: 90%;
+            margin-bottom: $mobile30px;
+        }
+    }
+
+    &__leftSide {
+        width: 50vw;
+        margin-left: auto;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+        }
+
+        &_img {
+            width: 100%;
+            object-fit: none;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                object-fit: contain;
+                width: 95%;
+                margin: 4vw auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            @media only screen and (max-width: 499px) {
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__buttonWr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 999;
+
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+        }
+
+        &_link,
+        &_btn {
+            font-family: $Nexa700;
+            display: flex;
+            color: $whiteColor;
+            padding: $desctop15px $desctop45px;
+            border-radius: $desctop20px;
+            outline: none;
+            cursor: pointer;
+            margin-top: $desctop20px;
+            transition: all 0.25s;
+            width: fit-content;
+            font-size: $desctop16px;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                padding: $tablet14px $tablet30px;
+                border-radius: $tablet20px;
+                margin-top: $tablet20px;
+                font-size: $tablet16px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                padding: $mobile14px $mobile30px;
+                border-radius: $mobile20px;
+                margin-top: $mobile20px;
+                font-size: $mobile16px;
+                width: 100%;
+                justify-content: center;
+                margin: $mobile25px 0 0 0;
+            }
+
+            &:hover {
+                background-color: $whiteColor;
+            }
+        }
+
+        &_link {
+            margin-right: $desctop50px;
+            border: $desctop2px solid $mainColor;
+            background-color: $mainColor;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                margin-right: $tablet40px;
+                border: $tablet2px solid $mainColor;
+            }
+
+            @media only screen and (max-width: 499px) {
+                margin-right: 0;
+                border: $mobile2px solid $mainColor;
+            }
+
+            &:hover {
+                color: $mainColor;
+            }
+        }
+
+        &_btn {
+            border: $desctop2px solid $greenColor;
+            background-color: $greenColor;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                border: $tablet2px solid $greenColor;
+            }
+
+            @media only screen and (max-width: 499px) {
+                border: $mobile2px solid $greenColor;
+            }
+
+            &:hover {
+                color: $greenColor;
+            }
+        }
+    }
+}
+
+.card1,
+.card2,
+.card3,
+.card4 {
+    position: absolute;
+    border-radius: $desctop5px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    will-change: transform;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        border-radius: $tablet5px;
+    }
+}
+
+.card1 {
+    width: 40vw;
+    height: 40vw;
+    background-image: url('./images/giftbox.svg');
+    left: 1vw;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 35vw;
+        height: 35vw;
+        left: -4vw;
+        top: 0;
+    }
+}
+
+.card2 {
+    width: 20vw;
+    height: 20vw;
+    background-image: url('./images/toothpaste.svg');
+    left: 20vw;
+    top: 27vw;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 15vw;
+        height: 15vw;
+        left: -4vw;
+        top: 5vw;
+    }
+}
+
+.card3 {
+    width: 20vw;
+    height: 20vw;
+    background-image: url('./images/toothbrush.svg');
+    left: 42vw;
+    top: 22vw;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 15vw;
+        height: 15vw;
+        left: 19vw;
+        top: 2vw;
+    }
+}
+
+.card4 {
+    width: 15vw;
+    height: 15vw;
+    background-image: url('./images/dental-floss.svg');
+    left: 40vw;
+    bottom: -6vw;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 10vw;
+        height: 10vw;
+        left: 16vw;
+        top: 24vw;
+    }
+}
+
+.card5 {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    background-image: url('./images/mouthwash.svg');
+    bottom: -6vw;
+    left: 20vw;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 10vw;
+        height: 10vw;
+        left: 0vw;
+        top: 22vw;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        position: relative;
+        width: initial;
+        height: initial;
+        top: 8vw;
+    }
+
+    @media only screen and (max-width: 499px) {
+        display: none;
+    }
+}
